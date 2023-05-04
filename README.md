@@ -31,3 +31,15 @@ Gick på öppet hus i Chalmers under lektionstid
 - Vad jag har gjort: Skapat en "Om sida", och ordnat 'multer' så att bilder som publiceras visas korrekt i posts.ejs
 - Vad jag ska göra nästa gång: Lägga in saker på startsidan
 - Vad jag generellt behöver göra: Lägga ner lite mer arbete på de funktioner som ska finnas på hemsidan men också fokusera på stylen av den
+
+### 4 maj (Har under en månad missat att dokumentera vad jag arbetat med på lektionerna)
+- Vad jag har gjort: 
+    - Skapat en inloggnings- och registreringsfunktion som tillåter dig att publicera inlägg efter registrering.
+    - Skyddat router som innan gick att få tillgång till utan att vara inloggad
+    - Registrering som kräver användaren att följa valideringschemat för lösenord- och användarnamnsformat med hjälp av modulen Joi
+    - Färdig med alla sidorna som ska finnas på hemsidan 
+    - Fixat en SASS-fil fylld med styling som kompileras till CSS av Live Sass Compiler (extension i visual studio code)
+    - Ordnat media query för att anpassa responsivitet beroende på hur skärmen anpassas från enhet till enhet
+    - Diverse funktioner som saknades i Forum, Inlägg och Skapa inlägg. Exempelvis sökfunktion för inläggen, kategorifiltrering för forum-inläggen och länk till inloggningssidan på startsidan
+- Vad jag ska göra nästa gång: Komma på något att lägga till på startsidan. Eventuellt ordna svarsfunktion i forumsidan
+- Vad jag generellt behöver göra: 
