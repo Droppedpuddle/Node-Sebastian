@@ -1,3 +1,5 @@
+/* SCSS-variabler */
+/* Alla element */
 * {
   box-sizing: border-box;
 }
@@ -5,7 +7,7 @@
 /* Navbar */
 .nav-container {
   display: flex;
-  top: 13vh;
+  top: 17vh;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -136,17 +138,16 @@ button:hover {
 }
 
 /* Posts */
-.search-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .search-input-form {
   margin: 10px;
   padding: 5px;
   border-radius: 5px;
   font-size: 16px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
 }
 
 .search-button {
@@ -329,14 +330,14 @@ button:hover {
     position: fixed;
     flex-direction: column;
     width: 40vw;
-    height: 78vh;
+    height: 80vh;
     justify-content: space-around;
     transform: translateX(-100vw);
   }
   .nav-container a {
     font-size: 14px;
     width: 100%;
-    padding: 15% 10%;
+    padding: 10px 10px;
     border-radius: 10%;
     border: 1px solid rgb(135, 132, 132);
   }
@@ -372,14 +373,14 @@ button:hover {
     position: fixed;
     flex-direction: column;
     width: 33vw;
-    height: 78vh;
+    height: 80vh;
     justify-content: space-around;
     transform: translateX(-100vw);
   }
   .nav-container a {
     font-size: 18px;
     width: 100%;
-    padding: 15% 10%;
+    padding: 10px 10px;
     border-radius: 10%;
     border: 1px solid rgb(135, 132, 132);
   }

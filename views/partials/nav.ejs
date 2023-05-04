@@ -1,6 +1,7 @@
 <!-- Referera till /style.css -->
 <link rel="stylesheet" href="/stylesheets/style.scss">
 
+<!-- Skapa element för hamburgar-ikonen som ska användas i media query -->
 <div class="hamburger" id="hamburger">
     <span class="bar"></span>
     <span class="bar"></span>
@@ -28,6 +29,11 @@
         <% } %>
     </div>
 </div>
+
+<!-- Detta skript lägger till en händelselyssnare på klickhändelsen för en 
+     hamburger-ikon och växlar mellan att lägga till och ta bort CSS-klasser 
+     på två olika HTML-element för att visa eller dölja en navigationsmeny 
+     när användaren klickar på ikonen. -->
 <script>
     const hamburger = document.getElementById('hamburger');
     const navContainer = document.getElementById("nav-container") 
@@ -36,5 +42,4 @@
         hamburger.classList.toggle("rotate");
         navContainer.classList.toggle("nav-dis");
     })
-
 </script>

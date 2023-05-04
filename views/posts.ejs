@@ -15,14 +15,17 @@
           <b>WLOG</b>
         </h1>
     </a>
+    
     <!-- Inkludera nav.ejs som navbar -->
     <%- include(nav) %>
 
     <!-- Sökruta för inlägg -->
     <h2 class="search-title">Sök inlägg:</h2>
     <form class="search-form" method="GET" action="/posts">
-        <input class="search-input-form" type="text" name="search" placeholder="Sök efter inlägg...">
-        <button class="search-button" type="submit">Sök</button>
+        <div class="search-container">
+            <input name="search" type="text" placeholder="Sök efter inlägg..." class="search-input-form">
+            <button type="submit" class="search-button">Sök</button>
+        </div>
     </form>
 
     <!-- Länk som laddar om sidan och visar alla inlägg -->

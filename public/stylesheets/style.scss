@@ -1,3 +1,5 @@
+/* SCSS-variabler */
+
 $color_1: #fff;
 $color_2: #4CAF50;
 $color_3: #444;
@@ -14,7 +16,7 @@ $background-color_5: #fff;
 $background-color_6: #106a0b;
 $background-color_7: black;
 
-
+/* Alla element */
 * {
     box-sizing: border-box;
 }
@@ -22,7 +24,7 @@ $background-color_7: black;
 /* Navbar */
 .nav-container {
 	display: flex;
-    top: 13vh;
+    top: 17vh;
 	text-align: center;
 	justify-content: center;
 	align-items: center;
@@ -149,16 +151,16 @@ button {
 
 
 /* Posts */
-.search-form {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
 .search-input-form {
     margin: 10px;
 	padding: 5px;
 	border-radius: 5px;
 	font-size: 16px;
+}
+
+.search-container{
+    display: flex;
+    align-items: center;
 }
 .search-button {
 	padding: 5px 10px;
@@ -306,7 +308,6 @@ button {
 }
 
 /* Media Queries */
-
 @media screen and (max-width: 480px) {
     .forum-container{
         margin: 6%
@@ -327,14 +328,14 @@ button {
         position: fixed;
 		flex-direction: column;
 		width: 40vw;
-		height: 78vh;
+		height: 80vh;
 		justify-content: space-around;
 		transform: translateX(-100vw);
         
 		a {
 			font-size: 14px;
             width: 100%;
-		    padding: 15% 10%;
+		    padding: 10px 10px;
             border-radius: 10%;
 		    border: 1px solid rgb(135, 132, 132);
 		}
@@ -371,14 +372,14 @@ button {
         position: fixed;
 		flex-direction: column;
 		width: 33vw;
-		height: 78vh;
+		height: 80vh;
 		justify-content: space-around;
 		transform: translateX(-100vw);
         
 		a {
 			font-size: 18px;
             width: 100%;
-		    padding: 15% 10%;
+		    padding: 10px 10px;
             border-radius: 10%;
 		    border: 1px solid rgb(135, 132, 132);
 		}
