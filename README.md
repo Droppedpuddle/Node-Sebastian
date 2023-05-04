@@ -42,4 +42,4 @@ Gick på öppet hus i Chalmers under lektionstid
     - Ordnat media query för att anpassa responsivitet beroende på hur skärmen anpassas från enhet till enhet
     - Diverse funktioner som saknades i Forum, Inlägg och Skapa inlägg. Exempelvis sökfunktion för inläggen, kategorifiltrering för forum-inläggen och länk till inloggningssidan på startsidan
 - Vad jag ska göra nästa gång: Komma på något att lägga till på startsidan. Eventuellt ordna svarsfunktion i forumsidan
-- Vad jag generellt behöver göra: 
+- Vad jag generellt behöver göra: Finslipa stylingen av webbsidan
