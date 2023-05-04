@@ -1,7 +1,9 @@
 // Importera de nödvändiga paketen och modulerna
 const express = require('express');
-const session = require('express-session');2
+const session = require('express-session');
+/*
 const sassMiddleware = require('node-sass-middleware');
+*/
 const app = express();
 const db = require('./connection');
 const upload = require('./uploads');
@@ -43,15 +45,14 @@ app.locals.icon = path.join(__dirname, 'views', 'partials', 'icon.ejs')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(__dirname + '/public'));
 
+/*
 app.use(sassMiddleware({
-    src: __dirname + '/public/stylesheets/scss', // Källmapp för SCSS-filer
-    dest: __dirname + '/public/stylesheets', // Destinationsmapp för kompilerade CSS-filer
+    src: __dirname + '/public/sass', // Källmapp för SCSS-filer
+    dest: __dirname + '/public/sass/css', // Destinationsmapp för kompilerade CSS-filer
     debug: true,
     outputStyle: 'compressed',
-    prefix: '/stylesheets'
 }));
-
-
+*/
 
 // Använd session middleware för att spåra inloggning
 app.use(session({

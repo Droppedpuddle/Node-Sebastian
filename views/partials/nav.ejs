@@ -1,8 +1,13 @@
-<!-- Referera till /styles.css -->
-<link rel="stylesheet" href="/style.scss">
+<!-- Referera till /style.css -->
+<link rel="stylesheet" href="/stylesheets/style.scss">
 
+<div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
 <!-- Navbar -->
-<div class="nav-container" style="text-align: center;">
+<div class="nav-container" id="nav-container">
     <a class="nav-link" href="/">Start</a>
     <a class="nav-link" href="/posts">Inlägg</a>
     <!-- Kolla om användaren har startat en session och är inloggad -->
@@ -21,3 +26,13 @@
         <a class="nav-link" href="/register">Registrera</a>
     <% } %>
 </div>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navContainer = document.getElementById("nav-container") 
+
+    hamburger.addEventListener("click",()=>{
+        hamburger.classList.toggle("rotate");
+        navContainer.classList.toggle("nav-dis");
+    })
+
+</script>
