@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inkludera icon.ejs som favicon -->
+    <%- include(icon) %>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>WLOG - Inloggning</title>
+</head>
+<body>
+    <a href="/" style="text-decoration: none; color: inherit;">
+        <h1>
+          <b>WLOG</b>
+        </h1>
+    </a>
+    <!-- Inkludera nav.ejs som navbar -->
+    <%- include(nav) %>
+
+    <!-- Form för användarens att logga in -->
+    <h2>Logga in</h2>
+    <form action="/login" method="POST">
+        <div style="text-align: center;">
+            <label for="username">Användarnamn</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <label for="password">Lösenord</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <button type="submit">Logga in</button>
+        </div>
+    </form>
+    <br>
+    <div style="text-align: center;">
+        <!-- Meddelande som hänvisar till registreringssidan -->
+        <p>Har du inget konto? <a href="/register">Registrera dig här</a></p>
+    </div>
+</body>
+<footer class="footer">
+</footer>
+</html>

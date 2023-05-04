@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inkludera icon.ejs som favicon -->
+    <%- include(icon) %>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>WLOG - Registrering</title>
+</head>
+<body>
+    <a href="/" style="text-decoration: none; color: inherit;">
+        <h1>
+          <b>WLOG</b>
+        </h1>
+    </a>
+    <!-- Inkludera nav.ejs som navbar -->
+    <%- include(nav) %>
+
+    <!-- Registreringsfunktion för nya användare -->
+    <h2>Registrering</h2>
+    <form action="/register" method="POST">
+        <div style="text-align: center;">
+            <label for="username">Användarnamn</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <label for="password">Lösenord</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <!-- Kriterierna lösenord och användarnamn måste uppfylla för att skapa konto -->
+        <ul class="password-requirements">
+            <li>Lösenordet måste innehålla minst 1 siffra</li>
+            <li>Användarnamnet och lösenordet måste vara minst 5 tecken</li>
+            <li>Användarnamnet och lösenordet får ej matcha</li>
+        </ul>
+        <div style="text-align: center;">
+            <button type="submit">Registrera</button>
+        </div>
+    </form>
+
+    <!-- Visa felmeddelande om input från användaren har felaktigt format (inte godkänns i valideringsschemat) -->
+    <% if (error) { %>
+        <p style="color: red;">Felaktigt format</p>
+    <% } %>
+    <br>
+    <div style="text-align: center;">
+        <!-- Meddelande som hänvisar till inloggninssidan -->
+        <p>Har du redan ett konto? <a href="/login">Logga in här</a></p>
+    </div>
+</body>
+<footer class="footer">
+</footer>
+</html>

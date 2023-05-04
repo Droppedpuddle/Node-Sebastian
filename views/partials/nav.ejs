@@ -1,0 +1,23 @@
+<!-- Referera till /styles.css -->
+<link rel="stylesheet" href="/style.scss">
+
+<!-- Navbar -->
+<div class="nav-container" style="text-align: center;">
+    <a class="nav-link" href="/">Start</a>
+    <a class="nav-link" href="/posts">Inlägg</a>
+    <!-- Kolla om användaren har startat en session och är inloggad -->
+    <% if (loggedIn) { %>
+        <!-- Om inloggad, visa meny för att skapa inlägg -->
+        <a class="nav-link" href="/post">Skapa inlägg</a>        
+    <% } %>
+    <a class="nav-link" href="/forum">Forum</a>
+    <a class="nav-link" href="/about">Om sidan</a>
+    <% if (loggedIn) { %>
+        <!-- Om inloggad, visa meny för att logga ut -->
+        <a class="nav-link" href="/logout">Logga ut</a>
+    <% }  else { %>
+        <!-- Annars, visa alternativ för inloggning- och registrering -->
+        <a class="nav-link" href="/login">Logga in</a>
+        <a class="nav-link" href="/register">Registrera</a>
+    <% } %>
+</div>

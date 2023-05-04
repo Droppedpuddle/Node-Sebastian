@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inkludera icon.ejs som favicon -->
+    <%- include(icon) %>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>WLOG - Inlägg</title>
+</head>
+<body>
+    <a href="/" style="text-decoration: none; color: inherit;">
+        <h1>
+          <b>WLOG</b>
+        </h1>
+    </a>
+    <!-- Inkludera nav.ejs som navbar -->
+    <%- include(nav) %>
+
+    <!-- Sökruta för inlägg -->
+    <h2 class="search-title">Sök inlägg:</h2>
+    <form class="search-form" method="GET" action="/posts">
+        <input class="search-input-form" type="text" name="search" placeholder="Sök efter inlägg...">
+        <button class="search-button" type="submit">Sök</button>
+    </form>
+
+    <!-- Länk som laddar om sidan och visar alla inlägg -->
+    <a class="show-all-posts" href="/posts">Visa alla inlägg</a>
+
+    <!-- For-loop som hämtar inläggen och visar dem -->
+    <h2 class="latest-posts">Senaste inlägg:</h2>
+        <% for (var i = 0; i < posts.length; i++) { %>
+            <div class="post-container">
+                <a style="text-decoration: none; color: inherit;" href="/"><h3 class="post-title"><%= posts[i].rubrik %></h3></a>
+                <p class="post-author">publicerad av <strong><i><%= posts[i].author %></i></strong></p>
+                <br>
+            <% if (posts[i].bild) { %>
+                <img class="post-image" style="max-width: 300px; max-height: 200px;"src="/uploads/<%= posts[i].bild %>" alt="Bild">
+        <%  } %>
+                <p class="post-text"><%= posts[i].text %></p>
+                <br>
+                <p class="post-datetime"><%= new Date(posts[i].datum).toLocaleString('sv-SE') %></p>
+            </div>
+            <br>
+        <% } %>
+</body>
+<footer class="footer">
+</footer>
+</html>

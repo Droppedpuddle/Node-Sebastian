@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inkludera icon.ejs som favicon -->
+    <%- include(icon) %>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>WLOG - Start</title>
+</head>
+<body>
+    <a href="/" style="text-decoration: none; color: inherit;">
+        <h1>
+          <b>WLOG</b>
+        </h1>
+    </a>
+    <!-- Inkludera nav.ejs som navbar -->
+    <%- include(nav) %>
+
+    <!-- Kolla om användaren har startat en session och är inloggad -->
+    <% if (loggedIn){ %>
+        <!-- Om inloggad, visa välkomstmeddelande tillsammans med användarens användarnamn -->
+        <h2>Välkommen tillbaka, <%= username%>!</h2>
+        <h2>Klicka <a href="/post">här</a> för att publicera inlägg</h2>
+    <% } else { %>
+        <!-- Annars, visa meddelande med länk till inloggningssidan -->
+        <h2>Var vänlig <a href="/login">logga in</a> för att publicera inlägg</h2>
+    <% } %>
+</body>
+<footer class="footer">
+</footer>
+</html>

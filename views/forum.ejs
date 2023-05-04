@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inkludera icon.ejs som favicon -->
+    <%- include(icon) %>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>WLOG - Forum</title>
+</head>
+<body>
+    <a href="/" style="text-decoration: none; color: inherit;">
+        <h1>
+          <b>WLOG</b>
+        </h1>
+    </a>
+
+    <!-- Inkludera nav.ejs som navbar -->
+    <%- include(nav) %>
+
+    <!-- Kategorier att klicka på för att filtrera -->
+    <h2>Alla Kategorier:</h2>
+    <div class="forum-categories">
+        <button onclick="sort('html')">HTML</button>
+        <button onclick="sort('css')">CSS</button>
+        <button onclick="sort('node')">Node</button>
+        <button onclick="sort('jekyll')">Jekyll</button>
+        <button onclick="sort('alla')">Visa alla</button>
+    </div>
+    <br>
+
+    <!---- Kontrollera om det finns några frågor att visa ---->
+    <% if (forumQuestions && forumQuestions.length) { %>
+        <div class="forum-container">
+          <h3 class="forum-title">Forum-inlägg:</h3>
+          <ul class="forum-posts" id="forum-posts-list">
+
+            <!-- Foreach-loop som hämtar alla forum-inlägg med dess tillhörande kategori och fråga -->
+            <% forumQuestions.forEach(question => { %>
+              <li class="forum-post">
+                <div class="forum-question">
+                  <span class="forum-category"><%= question.category %></span>
+                  <span class="forum-question-text"><%= question.question %></span>
+                </div>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+      <% } else { %>
+        <!-- Om det inte finns några frågor i databasen, visa meddelande-->
+        <p>Inga frågor har ställts än.</p>
+      <% } %>      
+    <br>
+
+    <!-- Form för användaren att skriva in fråga -->
+    <h3>Ställ en fråga:</h3>
+    <form action="/forum" method="POST">
+        <label for="topic">Välj kategori</label>
+        <select name="topic" id="topic">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="node">Node.js</option>
+            <option value="jekyll">Jekyll</option>
+        </select>
+        <br><br>
+        <label for="question">Skriv din fråga:</label>
+        <textarea cols="30" rows="10" style="resize: none;" name="question" id="question"></textarea>
+        <br><br>
+        <button type="submit">Skicka</button>
+    </form>
+
+   <!---- Funktion för att sortera forum-inlägg baserat på vald kategori ---->
+    <script>
+      function sort(category) {
+        // Hämta alla forum-inlägg i en nodelist
+        const posts = document.querySelectorAll("#forum-posts-list li");
+        // Loopa igenom varje inlägg och kolla dess kategori
+        posts.forEach(post => {
+          const postCategory = post.querySelector(".forum-category").textContent;
+          // Om kategorin är "alla" eller matchar inläggets kategori, visa inlägget
+          if (category === 'alla' || postCategory === category) {
+            post.style.display = 'block';
+          } 
+          // Annars, dölj inlägget
+          else {
+            post.style.display = 'none';
+          }
+        });
+      }
+    </script>
+</body>
+<footer class="footer">
+</footer>
+</html>
