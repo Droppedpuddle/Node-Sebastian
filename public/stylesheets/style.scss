@@ -289,7 +289,7 @@ button {
 	color: $color_3;
 }
 
-/* Hamburger menu */
+/* Hamburgare dropdown-meny */
 .hamburger {
 	display: none;
 	cursor: pointer;
@@ -308,7 +308,7 @@ button {
 }
 
 /* Media Queries */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px){
     .forum-container{
         margin: 6%
     }
@@ -325,6 +325,8 @@ button {
         border-bottom: 1px solid rgb(96, 93, 93);
     }
 	.nav-container {
+		border-top-right-radius: 7%;
+		border-bottom-right-radius: 7%;
         position: fixed;
 		flex-direction: column;
 		width: 40vw;
@@ -352,6 +354,7 @@ button {
         margin: 10%;
     }
 }
+
 @media screen and (min-width: 480px) and (max-width: 786px) {
     .forum-container{
         margin: 6%;
@@ -369,6 +372,8 @@ button {
         border-bottom: 1px solid rgb(96, 93, 93);
     }
 	.nav-container {
+		border-top-right-radius: 7%;
+		border-bottom-right-radius: 7%;
         position: fixed;
 		flex-direction: column;
 		width: 33vw;
@@ -393,6 +398,31 @@ button {
 	}
 }
 
+@media screen and (max-height: 370px){
+	.nav-container {
+		top: 0vh;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		transform: translateX(0);
+		height: 20vh;
+		width: 100vw;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		a {
+			font-size: 10px;
+			padding: 5px 5px;
+			width: 50%;
+			border: none;
+			border-radius: 0;
+			border-bottom: 1px solid white;
+		}
+	}
+	.hamburger, #hamburger {
+		display: none;
+	}
+}
 .nav-dis {
 	transform: translateX(0vw);
 }
