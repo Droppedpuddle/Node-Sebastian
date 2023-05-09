@@ -325,6 +325,7 @@ button {
         border-bottom: 1px solid rgb(96, 93, 93);
     }
 	.nav-container {
+		z-index: 1;
 		border-top-right-radius: 7%;
 		border-bottom-right-radius: 7%;
         position: fixed;
@@ -372,6 +373,7 @@ button {
         border-bottom: 1px solid rgb(96, 93, 93);
     }
 	.nav-container {
+		z-index: 1;
 		border-top-right-radius: 7%;
 		border-bottom-right-radius: 7%;
         position: fixed;
@@ -390,6 +392,7 @@ button {
 		}
 	}
 	.hamburger {
+		z-index: 1;
         position: fixed;
 		display: block;
 		border: 3px solid black;
@@ -400,12 +403,11 @@ button {
 
 @media screen and (max-height: 370px){
 	.nav-container {
-		top: 0vh;
-		position: relative;
+		z-index: 1;
+		top: 24vh;
 		align-items: center;
 		justify-content: center;
 		flex-direction: row;
-		transform: translateX(0);
 		height: 20vh;
 		width: 100vw;
 		border-top-right-radius: 0;
@@ -419,10 +421,26 @@ button {
 			border-bottom: 1px solid white;
 		}
 	}
-	.hamburger, #hamburger {
-		display: none;
+	.hamburger {
+		border: 1px solid black;
+	}
+	.bar {
+		width: 20px;
+		height: 1.6px;	
 	}
 }
+
+@media screen and (max-height: 170px){
+	.hamburger, #hamburger{
+		display: none;
+	}
+	.nav-container {
+		transform: translateX(0);
+		position: relative;
+		top: 0;
+	}
+}
+
 .nav-dis {
 	transform: translateX(0vw);
 }
