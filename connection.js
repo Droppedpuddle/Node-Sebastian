@@ -1,12 +1,15 @@
 // Importera nödvändiga moduler
 const mysql = require('mysql');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 // Skapa en anslutning till databasen med anslutningsinformationen
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'Admin',
-  password: '1234567',
-  database: 'node_projekt',
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 // Anslut till databasen och visa felmeddelande om anslutningen lyckades eller misslyckades
