@@ -1,7 +1,6 @@
 // Importera de nödvändiga paketen och modulerna
 const express = require('express');
 const session = require('express-session');
-const dotenv = require('dotenv');
 const app = express();
 const db = require('./connection');
 const upload = require('./uploads');
@@ -43,11 +42,9 @@ app.locals.icon = path.join(__dirname, 'views', 'partials', 'icon.ejs')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(__dirname + '/public'));
 
-dotenv.config();
-
 // Använd session middleware för att spåra inloggning
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: 'SECRETCODE',
     resave: false,
     saveUninitialized: false
 }))

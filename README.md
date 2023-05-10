@@ -1,6 +1,16 @@
 # WLOG - Bloggsida för webbutvecklare
 En hemsida för webbutvecklares frågor och synpunkter
 
+## Instruction to run project
+- Skapa en (.env) fil i din rotkatalog
+- (.env)-filen skall innehålla följande variabler:
+    - DB_HOSTNAME   (Värdnamnet)
+    - DB_NAME   (Databasnamnet) 
+    - DB_USERNAME   (Användarnamn)
+    - DB_PASSWORD   (Användarens lösenord)
+- Ladda ner Live Sass Compiler som extension på Visual Studio Code om du vill redigera SCSS-koden
+
+
 ## Logg
 
 ### 23 februari
