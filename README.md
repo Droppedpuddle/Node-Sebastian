@@ -2,7 +2,7 @@
 En hemsida för webbutvecklares frågor och synpunkter
 
 ## Instruktioner för att köra projektet
-- Importera databaskonfigurationsfilen (node_projekt.sql) i db_config mappen i rotkatalogen
+- Importera databaskonfigurationsfilen (node_projekt.sql) till din server från (db_config) mappen i rotkatalogen
 - Skapa en (.env) fil i din rotkatalog
 - (.env)-filen skall innehålla följande variabler:
     - DB_HOSTNAME   (Värdnamnet)
