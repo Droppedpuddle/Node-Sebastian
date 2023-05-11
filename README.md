@@ -1,7 +1,7 @@
 # WLOG - Bloggsida för webbutvecklare
 En hemsida för webbutvecklares frågor och synpunkter
 
-## Instruction to run project
+## Instruktioner för att köra projektet
 - Skapa en (.env) fil i din rotkatalog
 - (.env)-filen skall innehålla följande variabler:
     - DB_HOSTNAME   (Värdnamnet)
