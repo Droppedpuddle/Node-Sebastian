@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 -- Databas: `node_projekt`
 --
 
+CREATE DATABASE IF NOT EXISTS node_projekt;
+USE node_projekt;
+
 -- --------------------------------------------------------
 
 --

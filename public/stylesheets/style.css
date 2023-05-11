@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* SCSS-variabler */
 /* Alla element */
 * {
@@ -37,7 +38,8 @@
 
 /* Body */
 body {
-  background-color: #B5BEC6;
+  background: rgb(23, 55, 29);
+  background: linear-gradient(90deg, rgb(23, 55, 29) 0%, rgb(26, 66, 19) 50%, rgb(20, 47, 26) 100%);
   font-family: "Montserrat", sans-serif;
   color: #444;
   margin: 0;
@@ -45,6 +47,7 @@ body {
 
 /* Headings */
 h1 {
+  color: rgb(189, 183, 183);
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-align: center;
@@ -57,6 +60,7 @@ h1 a {
 }
 
 h2 {
+  color: rgb(189, 183, 183);
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-align: center;
@@ -65,6 +69,7 @@ h2 {
 }
 
 h3 {
+  color: rgb(189, 183, 183);
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-align: center;
@@ -73,11 +78,13 @@ h3 {
 }
 
 p {
+  color: rgb(189, 183, 183);
   margin: 0 20%;
 }
 
 /* Form */
 form {
+  color: rgb(189, 183, 183);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,6 +137,15 @@ button:hover {
   margin: 0 5px;
   font-size: 10px;
   color: #3e3d3d;
+}
+
+/* (Registrera/Logga in) länkar */
+.registration-link {
+  color: rgb(32, 144, 209);
+}
+
+.login-link {
+  color: rgb(32, 144, 209);
 }
 
 /* Footer */
@@ -288,7 +304,7 @@ button:hover {
 }
 
 .forum-question-text {
-  color: #444;
+  color: rgb(189, 183, 183);
 }
 
 /* Hamburgare dropdown-meny */
