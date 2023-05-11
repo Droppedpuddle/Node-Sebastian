@@ -2,6 +2,7 @@
 En hemsida för webbutvecklares frågor och synpunkter
 
 ## Instruktioner för att köra projektet
+- Importera databaskonfigurationsfilen (node_projekt.sql) i db_config mappen i rotkatalogen
 - Skapa en (.env) fil i din rotkatalog
 - (.env)-filen skall innehålla följande variabler:
     - DB_HOSTNAME   (Värdnamnet)
@@ -9,7 +10,6 @@ En hemsida för webbutvecklares frågor och synpunkter
     - DB_USERNAME   (Användarnamn)
     - DB_PASSWORD   (Användarens lösenord)
 - Ladda ner Live Sass Compiler som extension på Visual Studio Code om du vill redigera SCSS-koden
-
 
 ## Logg
 
