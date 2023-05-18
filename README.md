@@ -51,5 +51,9 @@ Gick på öppet hus i Chalmers under lektionstid
     - Fixat en SASS-fil fylld med styling som kompileras till CSS av Live Sass Compiler (extension i visual studio code)
     - Ordnat media query för att anpassa responsivitet beroende på hur skärmen anpassas från enhet till enhet
     - Diverse funktioner som saknades i Forum, Inlägg och Skapa inlägg. Exempelvis sökfunktion för inläggen, kategorifiltrering för forum-inläggen och länk till inloggningssidan på startsidan
-- Vad jag ska göra nästa gång: Komma på något att lägga till på startsidan. Eventuellt ordna svarsfunktion i forumsidan
+- Vad jag ska göra nästa gång: Komma på något att lägga till på startsidan.
 - Vad jag generellt behöver göra: Finslipa stylingen av webbsidan
+
+### 18 maj (Sista ändringen)
+- Vad jag har gjort: Gjort att de tre senaste blogginläggen syns på startsidan tillsammans med länkar som dirigerar användaren till registrering eller publicering av inlägg beroende på om användaren är inloggad eller ej. Har även stylat färdigt hemsidan med nya färger och finputsningar i utseendet på hemsidan.
+
