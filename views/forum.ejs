@@ -56,7 +56,7 @@
     <!-- Form för användaren att skriva in fråga -->
     <h3>Ställ en fråga:</h3>
     <form action="/forum" method="POST">
-        <label for="topic">Välj kategori</label>
+        <label for="topic"><span class="mandatory">*</span> Välj kategori</label>
         <select name="topic" id="topic">
             <option value="html">HTML</option>
             <option value="css">CSS</option>
@@ -64,7 +64,7 @@
             <option value="jekyll">Jekyll</option>
         </select>
         <br><br>
-        <label for="question">Skriv din fråga:</label>
+        <label for="question"><span class="mandatory">*</span> Skriv din fråga:</label>
         <textarea cols="30" rows="10" style="resize: none;" name="question" id="question"></textarea>
         <br><br>
         <button type="submit">Skicka</button>

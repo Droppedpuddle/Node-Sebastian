@@ -7,6 +7,8 @@
 
 /* Navbar */
 .nav-container {
+  border-top: 2px solid #444;
+  border-bottom: 2px solid #444;
   display: flex;
   top: 17vh;
   text-align: center;
@@ -17,13 +19,11 @@
   padding: 10px;
   transition: all 0.2s ease-in-out;
 }
-.nav-container a {
+.nav-container .nav-link {
   width: 100%;
-  padding-bottom: 10px;
-  border-bottom: 1px solid white;
-}
-
-.nav-link {
+  padding: 7px;
+  border: 1px solid white;
+  border-radius: 10px;
   margin: 0 10px;
   text-decoration: none;
   color: #fff;
@@ -31,9 +31,9 @@
   font-weight: bold;
   transition: color 0.3s ease;
 }
-.nav-link:hover {
-  text-decoration: none;
+.nav-container .nav-link:hover {
   color: #4CAF50;
+  border: 1px solid #4CAF50;
 }
 
 /* Body */
@@ -41,7 +41,6 @@ body {
   background: rgb(23, 55, 29);
   background: linear-gradient(90deg, rgb(23, 55, 29) 0%, rgb(26, 66, 19) 50%, rgb(20, 47, 26) 100%);
   font-family: "Montserrat", sans-serif;
-  color: #444;
   margin: 0;
 }
 
@@ -139,12 +138,13 @@ button:hover {
   color: #3e3d3d;
 }
 
-/* (Registrera/Logga in) länkar */
-.registration-link {
-  color: rgb(32, 144, 209);
+/* Obligatoriskt */
+.mandatory {
+  color: red;
 }
 
-.login-link {
+/* Omdirigeringslänkar */
+.redirect-links {
   color: rgb(32, 144, 209);
 }
 
@@ -194,31 +194,38 @@ button:hover {
 }
 
 .post-container {
-  max-width: 97vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr) 7fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  max-width: 82vw;
   margin: 0 auto;
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #ddd;
   background-color: #fff;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
 .post-container:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
-
-.post-author {
+.post-container .post-author {
+  grid-area: 2/1/3/4;
+  text-align: center;
+  color: #777;
   font-size: 23px;
 }
-
-.post-title {
+.post-container .post-title {
+  grid-area: 1/1/2/4;
+  color: black;
   margin: 10px 0;
   font-size: 28px;
 }
-
-.post-image {
-  display: block;
+.post-container .post-image {
+  grid-area: 3/1/4/2;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
@@ -226,18 +233,25 @@ button:hover {
   padding: 5px;
   box-sizing: border-box;
 }
-
-.post-text {
+.post-container .post-text {
+  grid-area: 3/2/4/4;
+  color: black;
   font-size: 18px;
   line-height: 1.5;
-  text-align: left;
-  margin: 20px 10% 0;
+  margin: 0 40px;
 }
-
-.post-datetime {
+.post-container .post-datetime {
+  grid-area: 4/1/5/4;
+  text-align: center;
   font-size: 14px;
   color: #777;
   margin-top: 10px;
+}
+
+/* Latest posts */
+.latest-posts {
+  color: white;
+  font-size: 28px;
 }
 
 /* Forum */
@@ -268,31 +282,26 @@ button:hover {
 .forum-container {
   margin: 20px 0;
 }
-
-.forum-title {
+.forum-container .forum-title {
   font-weight: bold;
   margin-bottom: 10px;
 }
-
-.forum-posts {
+.forum-container .forum-posts {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
-.forum-post {
+.forum-container .forum-post {
   border-bottom: 1px solid #ddd;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
-
-.forum-question {
+.forum-container .forum-question {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.forum-category {
+.forum-container .forum-category {
   background-color: #4CAF50;
   color: #fff;
   font-size: 14px;
@@ -302,8 +311,7 @@ button:hover {
   border-radius: 5px;
   margin-right: 10px;
 }
-
-.forum-question-text {
+.forum-container .forum-question-text {
   color: rgb(189, 183, 183);
 }
 
@@ -317,6 +325,7 @@ button:hover {
 }
 
 .bar {
+  color: rgb(189, 183, 183);
   display: block;
   width: 50px;
   height: 4px;
@@ -329,6 +338,10 @@ button:hover {
 @media screen and (max-width: 480px) {
   .forum-container {
     margin: 6%;
+  }
+  .post-container {
+    display: flex;
+    flex-direction: column;
   }
   .post-author {
     font-size: 15px;
@@ -364,9 +377,12 @@ button:hover {
     z-index: 1;
     position: fixed;
     display: block;
-    border: 3px solid black;
+    border: 3px solid rgb(189, 183, 183);
     padding: 5px;
     transition: all 0.3s ease-in-out;
+  }
+  .bar {
+    background-color: rgb(189, 183, 183);
   }
   form {
     margin: 10%;
@@ -375,6 +391,10 @@ button:hover {
 @media screen and (min-width: 480px) and (max-width: 786px) {
   .forum-container {
     margin: 6%;
+  }
+  .post-container {
+    display: flex;
+    flex-direction: column;
   }
   .post-author {
     font-size: 19px;
@@ -410,9 +430,12 @@ button:hover {
     z-index: 1;
     position: fixed;
     display: block;
-    border: 3px solid black;
+    border: 3px solid rgb(189, 183, 183);
     padding: 5px;
     transition: all 0.3s ease-in-out;
+  }
+  .bar {
+    background-color: rgb(189, 183, 183);
   }
 }
 @media screen and (max-height: 370px) {
@@ -427,7 +450,7 @@ button:hover {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .nav-container a {
+  .nav-container .nav-link {
     font-size: 10px;
     padding: 5px 5px;
     width: 50%;
@@ -435,10 +458,14 @@ button:hover {
     border-radius: 0;
     border-bottom: 1px solid white;
   }
+  .nav-container .nav-link:hover {
+    border: none;
+  }
   .hamburger {
-    border: 1px solid black;
+    border: 1px solid rgb(189, 183, 183);
   }
   .bar {
+    background-color: rgb(189, 183, 183);
     width: 20px;
     height: 1.6px;
   }
@@ -448,9 +475,17 @@ button:hover {
     display: none;
   }
   .nav-container {
+    height: 50px;
     transform: translateX(0);
     position: relative;
     top: 0;
+  }
+  .nav-container .nav-link {
+    font-size: 13px;
+    border: none;
+  }
+  .nav-container .nav-link:hover {
+    border: none;
   }
 }
 .nav-dis {

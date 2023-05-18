@@ -20,19 +20,19 @@
     <%- include(nav) %>
     
    <h2>
-       Skriv ett inlägg
+       Skapa ett inlägg
    </h2>
    <br>
 
    <!-- Form där användaren kan skriva in rubrik, text och ladda upp bild för att publicera bland inlägg -->
    <form action="/post" method="POST" enctype="multipart/form-data">
-       <label for="title">Rubrik:</label>
+       <label for="title"><span class="mandatory">*</span> Rubrik:</label>
        <input type="text" name="rubrik" id="rubrik"/><br/><br/>
 
-       <label for="text">Text:</label>
+       <label for="text"><span class="mandatory">*</span> Text:</label>
        <textarea cols="30" rows="10" style="resize: none;" name="text" id="text"></textarea><br/><br/>
 
-       <label for="img">Bild:</label>
+       <label for="img"><span class="mandatory">*</span> Bild:</label>
        <input type="file" accept="image/*" name="bild" id="bild"/><br/>
        <br>
        <button type="submit">Publicera</button>

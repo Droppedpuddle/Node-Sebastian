@@ -32,21 +32,22 @@
     <a class="show-all-posts" href="/posts">Visa alla inlägg</a>
 
     <!-- For-loop som hämtar inläggen och visar dem -->
-    <h2 class="latest-posts">Senaste inlägg:</h2>
-        <% for (var i = 0; i < posts.length; i++) { %>
-            <div class="post-container">
-                <a style="text-decoration: none; color: inherit;" href="/"><h3 class="post-title"><%= posts[i].rubrik %></h3></a>
-                <p class="post-author">publicerad av <strong><i><%= posts[i].author %></i></strong></p>
-                <br>
-            <% if (posts[i].bild) { %>
-                <img class="post-image" style="max-width: 300px; max-height: 200px;"src="/uploads/<%= posts[i].bild %>" alt="Bild">
-        <%  } %>
-                <p class="post-text"><%= posts[i].text %></p>
-                <br>
-                <p class="post-datetime"><%= new Date(posts[i].datum).toLocaleString('sv-SE') %></p>
-            </div>
-            <br>
-        <% } %>
+    <br><br>
+        <div class="post-all-containers">
+            <% for (var i = 0; i < posts.length; i++) { %>
+                    <div class="post-container">
+                        <h3 class="post-title"><%= posts[i].rubrik %></h3>
+                        <p class="post-author">publicerad av <strong><i><%= posts[i].author %></i></strong></p>
+                        
+                    <% if (posts[i].bild) { %>
+                        <img class="post-image" style="max-width: 300px; max-height: 200px;"src="/uploads/<%= posts[i].bild %>" alt="Bild">
+                <%  } %>                    
+                        <p class="post-text"><%= posts[i].text %></p>
+                        <p class="post-datetime"><%= new Date(posts[i].datum).toLocaleString('sv-SE') %></p>
+                    </div>
+                <br><br>
+            <% } %>
+        </div>
 </body>
 <footer class="footer">
 </footer>

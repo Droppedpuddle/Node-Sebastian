@@ -23,10 +23,30 @@
     <% if (loggedIn){ %>
         <!-- Om inloggad, visa välkomstmeddelande tillsammans med användarens användarnamn -->
         <h2>Välkommen tillbaka, <%= username%>!</h2>
-        <h2>Klicka <a href="/post">här</a> för att publicera inlägg</h2>
-    <% } else { %>
-        <!-- Annars, visa meddelande med länk till inloggningssidan -->
-        <h2>Var vänlig <a href="/login">logga in</a> för att publicera inlägg</h2>
+        <h2>Klicka <a class="redirect-links" href="/post">här</a> för att publicera inlägg</h2>
+    <% } %>
+
+    <!-- Visa de tre senaste inläggen -->
+    <h2 class="latest-posts">Senaste inlägg:</h2>
+    <br><br>
+    <% for (var i = 0; i < latestPosts.length; i++) { %>
+            <div class="post-container">
+                <h3 class="post-title"><%= latestPosts[i].rubrik %></h3>
+                <p class="post-author">publicerad av <strong><i><%= latestPosts[i].author %></i></strong></p>
+                
+            <% if (latestPosts[i].bild) { %>
+                <img class="post-image" style="max-width: 300px; max-height: 200px;"src="/uploads/<%= latestPosts[i].bild %>" alt="Bild">
+        <%  } %>                    
+                <p class="post-text"><%= latestPosts[i].text %></p>
+                <p class="post-datetime"><%= new Date(latestPosts[i].datum).toLocaleString('sv-SE') %></p>
+            </div>
+        <br><br>
+    <% } %>
+
+   <!-- Kolla om användaren är utloggad -->
+    <% if (!loggedIn){ %>
+        <!-- Isåfall, visa meddelande med länk till inloggningssidan -->
+        <h2>Var vänlig <a class="redirect-links" href="/login">logga in</a> för att publicera inlägg</h2>
     <% } %>
     
 </body>

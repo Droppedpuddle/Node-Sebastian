@@ -23,12 +23,12 @@
     <h2>Registrering</h2>
     <form action="/register" method="POST">
         <div style="text-align: center;">
-            <label for="username">Användarnamn</label>
+            <label for="username"><span class="mandatory">*</span> Användarnamn</label>
             <input type="text" id="username" name="username" required>
         </div>
         <br>
         <div style="text-align: center;">
-            <label for="password">Lösenord</label>
+            <label for="password"><span class="mandatory">*</span> Lösenord</label>
             <input type="password" id="password" name="password" required>
         </div>
         <!-- Kriterierna lösenord och användarnamn måste uppfylla för att skapa konto -->
@@ -49,7 +49,7 @@
     <br>
     <div style="text-align: center;">
         <!-- Meddelande som hänvisar till inloggninssidan -->
-        <p>Har du redan ett konto? <a class="login-link "href="/login">Logga in här</a></p>
+        <p>Har du redan ett konto? <a class="redirect-links" href="/login">Logga in här</a></p>
     </div>
 </body>
 <footer class="footer">

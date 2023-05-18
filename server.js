@@ -51,9 +51,20 @@ app.use(session({
 
 // Hämta huvudsidan och skicka med sessionens inloggningsstatus och användarnamn (om inloggad)
 app.get('/', function(req,res){
-    loggedIn = req.session.loggedIn;
-    username = req.session.userID;
-    res.render('index', {loggedIn, username});
+    const loggedIn = req.session.loggedIn;
+    const username = req.session.userID;
+
+    // SQL-fråga för att hämta de tre senaste inläggen från node_info
+    const query = 'SELECT * FROM node_info ORDER BY datum DESC LIMIT 3';
+
+    db.query(query, function(err, results){
+        if (err){
+            throw err;
+        } else {
+            const latestPosts = results;
+            res.render('index', { latestPosts, loggedIn, username, });
+        }
+    }) 
 });
 
 // Hämta alla poster
